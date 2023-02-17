@@ -9,8 +9,17 @@ body {
   min-height: 100vh;
   min-width: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  /* text-align: center; */
+}
+
+header {
+  display: flex;
+  width: 100%;
+  gap: 20px;
+  justify-content: end;
+  padding: 10px 50px;
 }
 
 #timer {
@@ -30,26 +39,28 @@ body {
   border-radius: 5px;
   font-size: 12pt;
   transition: 0.3s;
-}
-#iniciar {
-  background-color: #5384e588;
-  color: #fff;
-  font-weight: 600;
-}
-#pausar {
-  background-color: #5384e588;
-  color: #fff;
-  font-weight: 600;
-}
-#parar {
   background-color: #5384e588;
   color: #fff;
   font-weight: 600;
 }
 
-#parar:hover,
-#iniciar:hover,
-#pausar:hover {
+.botao:hover {
   background-color: #0bba858d;
   color: #000;
+  cursor: pointer;
+}
+
+ul {
+  text-align: center;
+  background-color: #8529d5b0;
+  color: #fff;
+  min-width: 200px;
+  min-height: 5px;
+  max-height: 250px;
+  display: inline-block;
+  border-radius: 4px;
+}
+li {
+  text-decoration: none;
+  list-style: decimal inside;
 }

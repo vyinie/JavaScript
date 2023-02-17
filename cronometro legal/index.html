@@ -9,11 +9,16 @@
     <script src="script.js"></script>
   </head>
   <body>
+    <header>
+      <button id="pop_up" class="botao" onclick="liga_popup()">desativar pop-up</button>
+      <button id="hist" class="botao" onclick="liga_hist()">desativar histórico</button>
+    </header>
     <div id="timer">
       <h1 id="tela">00:00:00</h1>
       <button class="botao" id="iniciar" onclick="iniciar()">Iniciar</button>
       <button class="botao" id="pausar" onclick="pausar()">Pausar</button>
       <button class="botao" id="parar" onclick="parar()">Parar</button>
     </div>
+    <ul id="ul"></ul>
   </body>
 </html>
