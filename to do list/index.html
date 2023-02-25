@@ -4,86 +4,19 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>to do</title>
   </head>
+
   <body>
     <div id="content">
       <form id="form">
         <input type="text" id="inpText" /><input type="submit" id="inpBtn" />
       </form>
-      <ul id="ul"></ul>
+      <div id="div"></div>
+      <button id="delBtn">excluir tudo</button>
     </div>
   </body>
 </html>
 
-<script>
-  const $submit = document.querySelector("form");
-  $submit.addEventListener("submit", (event) => {
-    event.preventDefault();
-  });
-
-  var $inpTxt = document.querySelector("#inpText");
-  const $inpBtn = document.querySelector("#inpBtn");
-  var $ul = document.querySelector("#ul");
-
-  $inpBtn.addEventListener("click", () => {
-    if ($inpTxt != "") {
-      $ul.insertAdjacentHTML(
-        "beforeend",
-        `<li><input type="checkbox">${$inpTxt.value}</li>`
-      );
-      $inpTxt.value = "";
-      $inpTxt.focus();
-    }
-  });
-</script>
-
-<style>
-  * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-  }
-
-  body {
-    min-width: 100%;
-    padding: 15px;
-    position: relative;
-  }
-
-  #content {
-    padding: 10px 5px;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%);
-  }
-  form {
-    margin-bottom: 10px;
-  }
-
-  #inpBtn {
-    margin-left: 5px;
-    border: none;
-    padding: 3px 5px;
-    border-radius: 5px;
-    background-color: lightblue;
-    font-size: 12pt;
-    font-weight: 600;
-  }
-
-  #inpText {
-    border: none;
-    border-bottom: solid;
-    background: none;
-    height: 20px;
-    min-width: 40px;
-    resize: horizontal;
-  }
-  #inpText:focus {
-    outline: none;
-  }
-
-  li {
-    list-style: decimal;
-  }
-</style>
+<script src="script.js"></script>
