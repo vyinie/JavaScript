@@ -9,30 +9,28 @@ var $inpTxt = document.querySelector("#inpText");
 const $inpBtn = document.querySelector("#inpBtn");
 
 // id das li
-var $divUl = document.querySelector("#div");
+var $ul = document.querySelector("#div");
 const $delBtn = document.querySelector("#delBtn");
 
 // add uma li
-var lista = "<ul>";
-var itens = [];
 var id = 0;
+var idList = [];
 
+// insere uma li
 $inpBtn.addEventListener("click", () => {
-  var idLiBtn = id;
-  var liContent =
-    "<li class=" +
-    id +
-    "><input class=inpC type='checkbox'>" +
-    $inpTxt.value +
-    "<button id=" +
-    idLiBtn +
-    " class=liBtn>X" +
-    "</li>";
+  var li = document.createElement("li");
 
-  itens.push(liContent);
-  lista += itens[id];
+  const liCont = `<input type=checkbox>
+      ${$inpTxt.value}
+      <button onclick=deletar() class=liBtn id=${id}
+      >X`;
+
+  li.innerHTML = liCont;
+  $ul.appendChild(li);
+
+  li.classList.add(`d${id}`);
+  idList.push(id);
   id++;
-  $divUl.innerHTML = lista;
 
   $inpTxt.value = "";
   $inpTxt.focus();
@@ -40,9 +38,16 @@ $inpBtn.addEventListener("click", () => {
 
 // limpa toda a lista
 $delBtn.addEventListener("click", () => {
-  itens.splice(0, itens.length);
+  idList.splice(0, idList.length);
   id = 0;
-  lista = "<ul>";
-  $divUl.innerHTML = lista;
-  console.log(lista);
+  $ul.innerHTML = "";
 });
+
+// del item especifico
+function deletar() {
+  var target = event.target.id;
+  var liTargeted = document.querySelector(`.d${target}`);
+  if (idList.some((e) => target)) {
+    $ul.removeChild(liTargeted);
+  }
+}
