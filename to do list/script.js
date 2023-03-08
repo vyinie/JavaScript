@@ -19,8 +19,8 @@ var idList = [];
 // insere uma li
 $inpBtn.addEventListener("click", () => {
   var li = document.createElement("li");
-  $inpTxt.value = `teste${id}`
-  
+  $inpTxt.value = $inpTxt.value;
+
   const liCont = `<input id="inpC${id}" type=checkbox>
   <label for="inpC${id}">${$inpTxt.value}</label>
   <button onclick=deletar() class=liBtn id=${id}
