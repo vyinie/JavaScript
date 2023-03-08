@@ -5,13 +5,14 @@
 }
 
 body {
-  background: linear-gradient(160deg, #592366, 60%, #5383e5);
+  background-image: url(./img/background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
   min-height: 100vh;
   min-width: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* text-align: center; */
 }
 
 header {
@@ -23,8 +24,6 @@ header {
 }
 
 #timer {
-  /* background-color: #bd5f20d2;
-  border: #000000 solid 5px; */
   color: #fff;
   border-radius: 90px;
   padding: 40px 100px;
@@ -33,34 +32,43 @@ header {
   font-size: 50pt;
 }
 
-.botao {
-  border: none;
+.btn {
+  border: solid #fff 4px ;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 15px;
   font-size: 12pt;
   transition: 0.3s;
-  background-color: #5384e588;
+  background-color: #42083b;
   color: #fff;
   font-weight: 600;
 }
 
-.botao:hover {
+.btn:hover {
   background-color: #0bba858d;
   color: #000;
   cursor: pointer;
 }
 
-ul {
+#ul {
+
   text-align: center;
   background-color: #8529d5b0;
   color: #fff;
-  min-width: 200px;
+  min-width: auto;
+  padding: 2px 7px;
   min-height: 5px;
-  max-height: 250px;
-  display: inline-block;
+  max-height: 180px;
   border-radius: 4px;
+  overflow: hidden;
+  overflow-y: scroll;
 }
+#ul::-webkit-scrollbar{
+  width: 5px; 
+}
+#ul::-webkit-scrollbar-thumb{
+  background-color: #6b055f;
+}
+
 li {
-  text-decoration: none;
-  list-style: decimal inside;
+  list-style: decimal-leading-zero inside;
 }
