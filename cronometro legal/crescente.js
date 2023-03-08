@@ -1,5 +1,3 @@
-// lembrete: pra abrir ou fechar todas as funções encapsuladas aperte
-
 var seg = 0;
 var min = 0;
 var hor = 0;
