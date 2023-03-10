@@ -1,0 +1,84 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color: rgb(17, 81, 176);
+  min-height: 100vh;
+}
+
+#telaLogin {
+  background: linear-gradient(30deg, rgb(153, 45, 248), rgb(162, 116, 255) 70%);
+  padding: 20px;
+  border-radius: 4px;
+  min-height: 200px;
+  box-shadow: 10px 10px 3px #0000005b;
+}
+.input {
+  padding: 3px;
+  background-color: #ffffffc7;
+  border: none;
+  border-radius: 2px;
+  font-size: 14pt;
+  outline: none;
+}
+label {
+  font-size: 14pt;
+  margin-right: 10px;
+}
+
+#divUsuario,
+#divSenha {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 100%;
+  margin-top: 20px;
+}
+
+#senha{
+  margin-right: 6px;
+}
+.olho{
+  margin-left: -40px;
+  min-width: 13px;
+  cursor: pointer;
+}
+
+#entrar {
+  color: #fff;
+  font-size: 12pt;
+  border: none;
+  border-radius: 3px;
+  background-color: slateblue;
+  padding: 10px;
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+#btnCadastar{
+  display: inline;
+  cursor: pointer;
+  color: #fff;
+  text-decoration: none;
+  font-size: 13pt;
+  margin-left: 140px;
+}
+
+
+#telaCadastro {
+    background-color: rgb(17, 173, 176);
+    border-radius: 5px;
+    box-shadow: 5px 5px 3px #0000005b;
+    min-width: 400px;
+    min-height: 300px;
+  position: absolute;
+  display: none;
+}
