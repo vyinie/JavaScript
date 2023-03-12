@@ -57,42 +57,52 @@ mostrarSenha.addEventListener("click", () => {
   }
 });
 
+// sessão de cadastro
 const $cadastBtn = document.querySelector("#cadastBtn");
+const cadastUser = document.getElementById("inpUsuario");
+const cadastidade = document.getElementById("inpIdade");
+const cadastEmail = document.getElementById("inpEmail");
+const cadastSenha = document.getElementById("inpSenha");
 
-$cadastBtn.addEventListener("click", () => {
-  const cadastUser = document.getElementById("inpUsuario");
-  const cadastidade = document.getElementById("inpIdade");
-  const cadastEmail = document.getElementById("inpEmail");
-  const cadastSenha = document.getElementById("inpSenha");
+function coleta() {
   var conta = {
     nome: cadastUser.value,
     idade: cadastidade.value,
     email: cadastEmail.value,
     senha: cadastSenha.value,
   };
+
+  // cria o array só com emails
+  if (localStorage.getItem("emails") == null) {
+    var emails = [];
+    emails.push(cadastEmail.value);
+    localStorage.setItem("emails", JSON.stringify(emails));
+  } else {
+    var verificacaoEmail = JSON.parse(localStorage.getItem("emails"));
+    verificacaoEmail.push(cadastEmail.value);
+    localStorage.setItem("emails", JSON.stringify(verificacaoEmail));
+  }
+  // add a conta completa
   const strConta = JSON.stringify(conta);
+  localStorage.setItem(conta.nome, strConta);
+}
 
-  const verificacao = JSON.parse(localStorage.getItem(cadastUser.value));
+$cadastBtn.addEventListener("click", () => {
+  const verificacaoConta = JSON.parse(localStorage.getItem(cadastUser.value));
 
-  console.log(verificacao)
-
-  if (verificacao === null) {
-    localStorage.setItem(conta.nome, strConta);
+  if (verificacaoConta == null) {
+    coleta();
 
     $telaCadastro.style.display = "";
+
     cadastUser.value = "";
     cadastidade.value = "";
     cadastEmail.value = "";
     cadastSenha.value = "";
   } else {
-    if (cadastEmail.value == verificacao.email) {
-      alert("uma conta ja possue esse email, tente outro");
-      cadastEmail.value = ""
-    } else {
-      if (cadastUser.value == verificacao.nome) {
-        alert("uma conta ja possue esse nome de usuario, tente outro");
-        cadastUser.value = ""
-      }
+    if (cadastUser.value == verificacaoConta.nome) {
+      alert("uma conta ja possue esse nome de usuario, tente outro");
+      cadastUser.value = "";
     }
   }
 });
