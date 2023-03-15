@@ -4,15 +4,16 @@ $submit.addEventListener("submit", (event) => {
   event.preventDefault();
 });
 
+// ======================variaveis do html======================
 // id do form
-var $inpTxt = document.querySelector("#inpText");
+const $inpTxt = document.querySelector("#inpText");
 const $inpBtn = document.querySelector("#inpBtn");
 
 // id das li
 var $ul = document.querySelector("#div");
 const $delBtn = document.querySelector("#delBtn");
 
-// add uma li
+// ========================mexe nas li's========================
 var id = 0;
 var idList = [];
 
@@ -29,7 +30,7 @@ $inpBtn.addEventListener("click", () => {
   li.innerHTML = liCont;
   $ul.appendChild(li);
 
-  li.classList.add(`d${id}`);
+  li.classList.add(`id${id}`);
   idList.push(id);
   id++;
 
