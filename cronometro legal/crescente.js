@@ -3,7 +3,7 @@ var min = 0;
 var hor = 0;
 var contando_tempo = false;
 
-// inicia a função que roda tudo
+// ===============inicia a função que roda tudo===============
 function iniciar() {
   if (contando_tempo === false) {
     document.getElementById("iniciar").textContent = "Pausar";
@@ -16,7 +16,7 @@ function iniciar() {
   }
 }
 
-// faz os numeros com 1 digito terem um "0" antes
+// ===============numeros com 1 digito tem um 0===============
 function tela(num) {
   if (num < 10) {
     return "0" + num;
@@ -25,7 +25,7 @@ function tela(num) {
   }
 }
 
-// função que roda tudo
+// =========================roda tudo=========================
 function contar() {
   if (seg < 60) {
     seg++;
@@ -41,14 +41,14 @@ function contar() {
   document.getElementById("tela").innerHTML = `${tela(hor)}:${tela(min)}:${tela(seg)}`;
 }
 
-// pausa
+// ===========================pausa===========================
 function pausar() {
   document.getElementById("iniciar").textContent = "Iniciar";
   clearInterval(tempo);
   contando_tempo = false;
 }
 
-// zera o relogio
+// =======================zera o relogio======================
 function parar() {
   clearInterval(tempo);
   contando_tempo = false;
@@ -63,7 +63,7 @@ function parar() {
   document.getElementById("tela").innerHTML = "00:00:00";
 }
 
-// pop-up
+// ==========================pop-up===========================
 let popup_ligado = true;
 
 // ativa o pop-up
@@ -83,7 +83,7 @@ function mostra_popup() {
   }
 }
 
-// historico
+// =========================historico=========================
 var hist_ligado = true;
 
 // ativa o hist
