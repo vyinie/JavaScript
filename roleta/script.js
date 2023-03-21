@@ -9,8 +9,9 @@ const $inpTxt = document.querySelector("#inpTxt");
 const $inpBtn = document.querySelector("#inpBtn");
 const $ul = document.querySelector("#ul");
 const $btnGirar = document.querySelector("#btnGirar");
-const $inpDel = document.querySelector("#inpDel");
-// ======================outras variaveis=======================
+const $delBtn = document.querySelector("#delBtn");
+const $resposta = document.querySelector("#resposta");
+// ======================outras variaveis======================='
 const opcoes = [];
 var id = 0;
 
@@ -32,10 +33,11 @@ $inpBtn.addEventListener("click", () => {
 });
 
 // =====================limpa a lista toda======================
-$inpDel.addEventListener("click", () => {
+$delBtn.addEventListener("click", () => {
   opcoes.splice(0, opcoes.length);
   id = 0;
   $ul.innerHTML = "";
+  $resposta.innerHTML = "";
 });
 
 // =================deleta uma opcao especifica=================
@@ -49,13 +51,17 @@ function delLi() {
   var target = event.target.id;
   $ul.removeChild(document.getElementById(target));
 
-  const index = opcoes.indexOf(event.target.textContent)
+  const index = opcoes.indexOf(event.target.textContent);
   mudaLugar(index, 0);
-  opcoes.shift()
+  opcoes.shift();
 }
 
 // ======================gira essa bagaça=======================
 $btnGirar.addEventListener("click", () => {
-  const random = Math.floor(Math.random() * opcoes.length);
-  console.log(opcoes[random]);
+  if (opcoes != "") {
+    const aleatorio = Math.floor(Math.random() * opcoes.length);
+    $resposta.innerHTML = opcoes[aleatorio];
+  }
+  // $resposta.style.animation = "";
+  // setTimeout(() => ($resposta.style.animation = "girar .5s linear 4"), 3);
 });

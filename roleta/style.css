@@ -1,0 +1,154 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 20px;
+  background: linear-gradient(30deg, rgb(5, 238, 106), rgb(7, 117, 181))
+    no-repeat;
+  width: 100%;
+  height: 100vh;
+  display: inline-block;
+  position: relative;
+}
+button {
+  border: none;
+  cursor: pointer;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  margin-left: 4em;
+  gap: 10px;
+}
+#inpTxt {
+  box-shadow: 3px 3px 5px #00000079;
+  outline: none;
+  border: none;
+  font-size: 15pt;
+  height: 40px;
+  width: 400px;
+  padding: 5px;
+  background-color: #ffffff;
+}
+#inpBtn {
+  color: #fff;
+  box-shadow: 3px 3px 5px #00000079;
+  background-color: rgb(145, 9, 145);
+  font-size: 16pt;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(203, 140, 5);
+  border-radius: 3px;
+  border-bottom-left-radius: 0;
+  width: 400px;
+  min-height: 10px;
+  max-height: 300px;
+  margin-left: 4em;
+  margin-top: 1em;
+  overflow: hidden;
+  overflow-y: auto;
+  box-shadow: 3px 3px 5px #00000079;
+}
+ul::-webkit-scrollbar {
+  background-color: rgb(176, 88, 0);
+  width: 5px;
+  border-radius: 3px;
+}
+ul::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background-color: rgb(213, 210, 18);
+}
+
+li {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 3px 0;
+  font-size: 15pt;
+}
+li:hover {
+  background-color: rgb(203, 196, 5);
+  font-weight: bold;
+}
+
+#delBtn {
+  margin-left: 4em;
+  border-radius: 0 0 3px 3px;
+  padding: 5px;
+  padding-top: 10px;
+  font-size: 12pt;
+  background: linear-gradient(0deg, crimson 70%, rgb(203, 140, 5));
+  color: #fff;
+  box-shadow: 3px 3px 5px #00000079;
+}
+
+@keyframes girar {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#area_resposta {
+  position: absolute;
+  right: 100px;
+  top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  width: 500px;
+}
+#resposta {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  width: 400px;
+  height: 50px;
+  background-color: rgb(110, 0, 193);
+  color: #fff;
+
+  /* ROLETA */
+  /* position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 30px;
+  top: 80px;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  color: #fff;
+  background: linear-gradient(30deg, red, blue); */
+}
+h1::-webkit-scrollbar {
+  height: 5px;
+  border-radius: 3px;
+}
+h1::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+}
+
+#btnGirar {
+  box-shadow: 3px 3px 5px #00000079;
+  background-color: burlywood;
+  padding: 5px;
+  border-radius: 3px;
+  font-size: 14pt;
+}

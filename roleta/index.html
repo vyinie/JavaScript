@@ -5,15 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <form>
       <input type="text" placeholder="adicionar itens" id="inpTxt" />
-      <input type="submit" value="adicionar" id="inpBtn" />
-      <input type="button" value="limpar lista" id="inpDel" />
+      <button id="inpBtn">adicionar</button>
     </form>
-    <button id="btnGirar">girar roleta</button>
-    <ul id="ul"></ul>
+    <div id="lista">
+      <ul id="ul"></ul>
+      <button type="button" id="delBtn">limpar lista</button>
+    </div>
+    <div id="area_resposta">
+      <button id="btnGirar">GIRAR ROLETA</button>
+      <h2 id="resposta"></h2>
+    </div>
   </body>
 </html>
 <script src="script.js"></script>
