@@ -36,25 +36,36 @@ form {
 }
 
 #inpText {
+  font-size: 14pt;
   border: none;
   border-bottom: solid;
   background: none;
   height: 20px;
-  min-width: 40px;
-}
-#inpText:focus {
+  width: 150px;
   outline: none;
 }
 
-#div {
+#ul {
+  border: solid #1a1a1a;
   margin-top: 15px;
-  padding: 10px;
+  padding: 10px 0;
   min-width: 100%;
   border-radius: 4px;
   background-color: #dff;
+  max-height: 400px;
+  overflow: hidden;
+  overflow-y: auto;
+}
+#ul::-webkit-scrollbar {
+  width: 7px;
+  background-color: #64ffd8;
+}
+#ul::-webkit-scrollbar-thumb {
+  background-color: #55c1a6;
 }
 
 li {
+  padding: 0 10px;
   display: flex;
   align-items: center;
   list-style: none;

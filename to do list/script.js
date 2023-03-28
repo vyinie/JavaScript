@@ -10,7 +10,7 @@ const $inpTxt = document.querySelector("#inpText");
 const $inpBtn = document.querySelector("#inpBtn");
 
 // id das li
-var $ul = document.querySelector("#div");
+var $ul = document.querySelector("#ul");
 const $delBtn = document.querySelector("#delBtn");
 
 // ========================mexe nas li's========================
@@ -19,8 +19,8 @@ var idList = [];
 
 // insere uma li
 $inpBtn.addEventListener("click", () => {
-  var li = document.createElement("li");
-  $inpTxt.value = $inpTxt.value;
+  if ($inpTxt.value !="")
+  {  var li = document.createElement("li");
 
   const liCont = `<input id="inpC${id}" type=checkbox>
   <label for="inpC${id}">${$inpTxt.value}</label>
@@ -35,7 +35,7 @@ $inpBtn.addEventListener("click", () => {
   id++;
 
   $inpTxt.value = "";
-  $inpTxt.focus();
+  $inpTxt.focus();}
 });
 
 // limpa toda a lista
@@ -48,7 +48,7 @@ $delBtn.addEventListener("click", () => {
 // del item especifico
 function deletar() {
   var target = event.target.id;
-  var liTargeted = document.querySelector(`.d${target}`);
+  var liTargeted = document.querySelector(`.id${target}`);
   if (idList.some((e) => target)) {
     $ul.removeChild(liTargeted);
   }
