@@ -4,12 +4,26 @@
   box-sizing: border-box;
 }
 body {
-  background-color: #37ac5c;
+  height: 100vh;
+  background-color: #229db3;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10px;
+  position: relative;
 }
+
+#divVidas {
+  position: absolute;
+  right: 100px;
+  top: 50px;
+  border-radius: 4px;
+}
+.vida {
+  width: auto;
+  height: auto;
+  font-size: 25pt;
+}
+
 #interacao {
   display: flex;
   flex-direction: column;
@@ -18,6 +32,7 @@ body {
 
 #divCor {
   display: inline-block;
+  border: solid #1f1f1f4e;
   width: 100%;
   height: 100px;
   margin: 20px 0;
@@ -25,7 +40,7 @@ body {
 
 #opcoes {
   width: 540px;
-  background-color: #33583f;
+  background-color: #0977c1;
   padding: 10px;
 }
 .btnResp {
@@ -36,14 +51,14 @@ body {
   width: 150px;
   height: 50px;
   background-color: #ddd;
-  cursor:default;
+  cursor: default;
 }
 .btnResp:hover {
   background-color: #a1a1a1;
 }
 #historico {
   width: 518px;
-  height: 178px;
+  height: 190px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -52,29 +67,67 @@ body {
   margin-top: 20px;
 
   color: #fff;
-  background-color: #216e39;
+  background-color: #097f85;
   overflow: hidden;
   overflow-y: auto;
 }
 #historico::-webkit-scrollbar {
   width: 7px;
-  background-color: #068d30;
+  background-color: #097f85;
 }
 #historico::-webkit-scrollbar-thumb {
-  background-color: #216e39;
+  background-color: #1c48cc;
 }
-span {
+.spanBlock {
   display: inline-flex;
   flex-direction: column;
   align-items: center;
   margin: 5px;
   width: 90px;
   height: 80px;
-  background-color: #37ac5c;
-  cursor: pointer;
+  background-color: #287ce3;
 }
+
 .corHist {
   margin-top: 5px;
   width: 50px;
   height: 50px;
+  cursor: pointer;
+}
+
+#popupFundo {
+  display: none;
+  position: absolute;
+  background-color: #00000071;
+  width: 100%;
+  height: 100%;
+}
+
+#popup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #6dcd00;
+  position: absolute;
+  right: 50%;
+  top: 50%;
+  transform: translate(50%, -50%);
+
+  width: 500px;
+  height: 200px;
+}
+
+#btnReset {
+  margin-top: 15px;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: none;
+  width: 200px;
+  height: 50px;
+  cursor: pointer;
+}
+#btnReset:hover {
+  background-color: #a1a1a1;
 }
