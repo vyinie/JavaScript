@@ -1,0 +1,58 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+#btnTec {
+  margin-left: 50%;
+  transform: translate(-50%);
+  border: none;
+  padding: 20px;
+  background-color: bisque;
+}
+#txtArea {
+  margin-top: 20px;
+  background-color: blanchedalmond;
+  width: 500px;
+  height: 100px;
+  overflow: hidden;
+}
+
+#teclado {
+  display: none;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  width: 750px;
+  height: 200px;
+  background-color: aqua;
+  margin-top: 10px;
+  row-gap: 4px;
+}
+
+.tecla {
+  display: inline-block;
+  text-align: center;
+  padding-top: 5px;
+  text-transform: uppercase;
+  background-color: aquamarine;
+  width: 60px;
+  height: 30px;
+}
+.tecla:hover {
+  background-color: rgb(71, 217, 168);
+  cursor: default;
+}
+#space {
+  width: 500px;
+}
+#del {
+  width: 100px;
+}
