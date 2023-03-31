@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tela de Login</title>
+    <link rel="stylesheet" href="login.css" />
+  </head>
+  <body>
+    <!-- tela de login -->
+    <form id="telaLogin">
+      <!-- label de user -->
+      <div id="divUsuario">
+        <label for="usuario" class="loginLabel">USUARIO:</label>
+        <input type="text" name="usuario" id="usuarioLogin" class="input inpLogin" />
+      </div>
+      
+      <!-- label de senha -->
+      <div id="divSenha">
+        <label for="senha" class="loginLabel">SENHA:</label>
+        <input type="password" name="senha" id="senhaLogin" class="input inpSenha" /><span
+          class="olho olhoLogin"
+          >O</span
+        >
+      </div>
+      <!-- botoes do login -->
+      <input type="submit" value="ENTRAR" id="entrar" />
+      <p class="btnCadastar" onclick="mostraPopup()">fazer cadastro</p>
+    </form>
+
+
+    <!-- tela de cadastro -->
+    <div id="fundoCadastro">
+
+      <form id="telaCadastro">
+        <!-- nome e idade de user -->
+        <div id="cadastUser" class="cadastInputs">
+          <label for="Usuario" class="cadastLabel">Usuario:</label>
+          <input type="text" name="Usuario" class="input" id="inpUsuario" />
+          
+          <!-- idade -->
+          <span id="cadastIdade" class="cadastInputs">
+            <label for="idade" class="cadastLabel">Idade:</label>
+            <input
+              type="number"
+              name="idade"
+              id="inpIdade"
+              class="input"
+            />
+          </span>
+        </div>
+
+        <!-- add email -->
+        <div id="cadastEmail" class="cadastInputs">
+          <label for="email" class="cadastLabel">E-mail:</label>
+          <input type="email" name="email" id="inpEmail" class="input" size="30"/>
+        </div>
+
+        <!-- add senha -->
+        <div id="cadastSenha" class="cadastInputs">
+          <label for="senha" class="cadastLabel">Senha:</label>
+          <input
+            type="password"
+            name="senha"
+            id="senhaCadast"
+            class="input inpSenha"
+          /><span
+          class="olho olhoCadast"
+          >O</span>
+        </div>
+
+        <!-- botoes do cadastro -->
+        <input type="button" value="FINALIZAR CADASTRO" id="cadastBtn" />
+
+        <p class="btnCadastar" onclick="mostraPopup()">fazer login</p>
+      </form>
+    </div>
+  </body>
+</html>
+<script src="cadastro.js"></script>
