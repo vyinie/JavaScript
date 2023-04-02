@@ -19,23 +19,24 @@ var idList = [];
 
 // insere uma li
 $inpBtn.addEventListener("click", () => {
-  if ($inpTxt.value !="")
-  {  var li = document.createElement("li");
+  if ($inpTxt.value != "") {
+    var li = document.createElement("li");
 
-  const liCont = `<input id="inpC${id}" type=checkbox>
+    const liCont = `<input id="inpC${id}" type=checkbox>
   <label for="inpC${id}">${$inpTxt.value}</label>
   <button onclick=deletar() class=liBtn id=${id}
       >X`;
 
-  li.innerHTML = liCont;
-  $ul.appendChild(li);
+    li.innerHTML = liCont;
+    $ul.appendChild(li);
 
-  li.classList.add(`id${id}`);
-  idList.push(id);
-  id++;
+    li.classList.add(`id${id}`);
+    idList.push(id);
+    id++;
 
-  $inpTxt.value = "";
-  $inpTxt.focus();}
+    $inpTxt.value = "";
+    $inpTxt.focus();
+  }
 });
 
 // limpa toda a lista
