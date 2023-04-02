@@ -1,17 +1,37 @@
 const $calc = document.querySelector("#calc");
 const $display = document.querySelector("#display");
-const $btn = document.querySelector(".btn");
-const $mais = document.querySelector("#mais");
-const $menos = document.querySelector("#menos");
-const $divid = document.querySelector("#divid");
-const $vezes = document.querySelector("#vezes");
+var ultimaKey = $display.textContent.slice(-1);
+const sinais = ["-", "+", "*", "/"];
 
 $calc.addEventListener("click", (e) => {
-  if (e.target.className === "btn operacao") {
-    $display.textContent += " " + e.target.textContent + " ";
+  const verifSinal = sinais.some((e) => e == ultimaKey);
+  if (e.target.id === "igual") {
+    $display.textContent = eval($display.textContent);
   } else {
-    if (e.target.className === "btn") {
-      $display.textContent += e.target.textContent;
+    if (e.target.id === "del") {
+      $display.textContent = $display.textContent.slice(0, -1);
+    } else {
+      if (e.target.id === "delC") {
+        $display.textContent = "";
+      } else {
+        if (
+          (e.target.className === "btn operacao") &
+          (($display.textContent != "") | (e.target.textContent == "-"))
+        ) {
+          if (!verifSinal) {
+            $display.textContent += e.target.textContent;
+          } else {
+            $display.textContent =
+              $display.textContent.slice(0, -1) + e.target.textContent;
+          }
+        } else {
+          if (e.target.className === "btn") {
+            $display.textContent += e.target.textContent;
+          }
+        }
+      }
     }
   }
+  console.log($display.textContent.indexOf("."));
+  ultimaKey = $display.textContent.slice(-1);
 });

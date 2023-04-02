@@ -8,28 +8,39 @@
     <title>Calculadora</title>
   </head>
   <body>
-    <div id="calc">
+    <div id="calc" onmousedown="return false">
       <div id="display"></div>
+
       <div id="botoes">
-        <span id="num">
+        <div class="linha" id="linha1">
+          <span class="btn" id="delC">C</span>
+          <span class="btn" id="del"><=</span>
+          <span class="btn operacao" id="menos">-</span>
+        </div>
+
+        <div class="linha" id="linha2">
           <span class="btn">7</span>
           <span class="btn">8</span>
           <span class="btn">9</span>
+          <span class="btn operacao" id="mais">+</span>
+        </div>
+        <div class="linha" id="linha3">
           <span class="btn">4</span>
           <span class="btn">5</span>
           <span class="btn">6</span>
+          <span class="btn operacao" id="vezes">*</span>
+        </div>
+        <div class="linha" id="linha4">
           <span class="btn">1</span>
           <span class="btn">2</span>
           <span class="btn">3</span>
-          <span class="btn" id="num0">0</span>
-          <span class="btn" id="igual">=</span>
-        </span>
-        <span id="simb">
-          <span class="btn operacao" id="menos">-</span>
-          <span class="btn operacao" id="mais">+</span>
-          <span class="btn operacao" id="vezes">x</span>
           <span class="btn operacao" id="divid">/</span>
-        </span>
+        </div>
+        <div class="linha" id="linha5">
+          <span class="btn" id="num0">0</span>
+          <span class="btn">.</span>
+          <span class="btn" id="igual">=</span>
+        </div>
       </div>
     </div>
   </body>
