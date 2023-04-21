@@ -4,14 +4,22 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>relogio</title>
+    <title>cronometro</title>
     <link rel="stylesheet" href="crescente.css" />
-    <script src="crescente.js"></script>
   </head>
   <body>
     <header>
-      <button id="pop_up" class="btn" onclick="liga_popup()">desativar pop-up</button>
-      <button id="hist" class="btn" onclick="liga_hist()">desativar histórico</button>
+      <button id="openMenu">=</button>
+      <div id="wrapper">
+        <div id="options">
+          <button id="pop_up" class="btn" onclick="liga_popup()">
+            desativar pop-up
+          </button>
+          <button id="hist" class="btn" onclick="liga_hist()">
+            desativar histórico
+          </button>
+        </div>
+      </div>
     </header>
     <div id="timer">
       <h1 id="tela">00:00:00</h1>
@@ -21,3 +29,4 @@
     <ul id="ul"></ul>
   </body>
 </html>
+<script src="crescente.js"></script>

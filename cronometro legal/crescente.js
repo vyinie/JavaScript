@@ -38,7 +38,9 @@ function contar() {
       }
     }
   }
-  document.getElementById("tela").innerHTML = `${tela(hor)}:${tela(min)}:${tela(seg)}`;
+  document.getElementById("tela").innerHTML = `${tela(hor)}:${tela(min)}:${tela(
+    seg
+  )}`;
 }
 
 // ===========================pausa===========================
@@ -61,6 +63,7 @@ function parar() {
   min = 0;
   hor = 0;
   document.getElementById("tela").innerHTML = "00:00:00";
+  document.getElementById("iniciar").textContent = "Iniciar";
 }
 
 // ==========================pop-up===========================
@@ -100,6 +103,26 @@ function liga_hist() {
 function mostra_hist() {
   if (hist_ligado === true) {
     const $ul = document.getElementById("ul");
-    $ul.insertAdjacentHTML("beforeend", `<li>${tela(hor)}:${tela(min)}:${tela(seg)}</li>`);
+    $ul.insertAdjacentHTML(
+      "beforeend",
+      `<li>${tela(hor)}:${tela(min)}:${tela(seg)}</li>`
+    );
   }
 }
+
+var menuOpen = false;
+document.getElementById("wrapper").addEventListener("click", (e) => {
+  if (e.target.id == "wrapper") {
+    menuOpen = !menuOpen;
+    document.getElementById("wrapper").style.display = "";
+  }
+});
+document.getElementById("openMenu").addEventListener("click", () => {
+  if (menuOpen === false) {
+    menuOpen = !menuOpen;
+    document.getElementById("wrapper").style.display = "flex";
+  } else {
+    menuOpen = !menuOpen;
+    document.getElementById("wrapper").style.display = "";
+  }
+});
